@@ -1,7 +1,7 @@
 # OpenGL-Tutorial
 
 ## Introdução
-Tutorial básico para aprender como desenhar e manipular polígonos e linhas 2D utilizando OpenGL e C++.
+Tutorial básico para aprender a como utilizar as principais funções do OpenGL em C++.
 
 _Obs: Este tutorial é direto e não se aprofunda em conceitos do OpenGL._
 
@@ -10,10 +10,14 @@ Estou criando esses tutoriais para repassar da forma mais simples possível o qu
 ## Tutoriais
 - **1-PrintBasicShapes** - Como desenhar triângulos, retângulos e círculos
 <p align="center">
-<img src="https://github.com/Brenocq/OpenGL-Tutorial/blob/master/img/Tutorial1.png?raw=true" height="100">
+<img src="./img/Tutorial1.png?raw=true" height="100">
 </p>
 
-- **2-Animation**(TODO) - Como criar animações de objetos
+- **2-Animation** - Como criar animações de objetos
+<p align="center">
+<img src="./img/Tutorial2.png?raw=true" height="100">
+</p>
+
 - **3-MouseClick**(TODO) - Como receber os dados do mouse na janela
 - **4-MenuWindow**(TODO) - Como criar um menu de seleção
 

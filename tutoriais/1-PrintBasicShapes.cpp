@@ -105,8 +105,8 @@ void circle(float x, float y, float radius){
 //------------------------------//
 //----------- STRANGE ----------//
 //------------------------------//
-
 void strangePolygon(float x, float y){
+
   glColor3f(0, 0, 0);// Define que será desenhar um objeto preto
 
   glBegin(GL_POLYGON);
