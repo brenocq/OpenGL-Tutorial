@@ -10,20 +10,23 @@ Estou criando esses tutoriais para repassar da forma mais simples possível o qu
 ## Tutoriais
 - **1-PrintBasicShapes** - Como desenhar triângulos, retângulos e círculos
 <p align="center">
-<img src="./img/Tutorial1.png?raw=true" height="200">
+<img src="./img/Tutorial1.png?raw=true" height="250">
 </p>
 
 - **2-Animation** - Como criar animações de objetos
 <p align="center">
-<img src="./img/Tutorial2.png?raw=true" height="200">
+<img src="./img/Tutorial2.png?raw=true" height="250">
 </p>
 
 - **3-MouseClick** - Como receber os dados do mouse na janela
 <p align="center">
-<img src="./img/Tutorial3.png?raw=true" height="200">
+<img src="./img/Tutorial3.png?raw=true" height="250">
 </p>
 
 - **4-MenuWindow**(TODO) - Como criar um menu de seleção
+<p align="center">
+<img src="./img/Tutorial4.png?raw=true" height="250">
+</p>
 
 ## Instalação
 
@@ -40,8 +43,8 @@ $ make clean
 $ make
 ```
 
-Para executar o tutorial 1: `/run1`.<br>
-Para executar o tutorial 2: `/run2`.<br>
+Para executar o tutorial 1: `./run1`.<br>
+Para executar o tutorial 2: `./run2`.<br>
 (...)
 
 ### Alguns projetos que utilizam OpenGL
