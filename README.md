@@ -10,15 +10,19 @@ Estou criando esses tutoriais para repassar da forma mais simples possível o qu
 ## Tutoriais
 - **1-PrintBasicShapes** - Como desenhar triângulos, retângulos e círculos
 <p align="center">
-<img src="./img/Tutorial1.png?raw=true" height="100">
+<img src="./img/Tutorial1.png?raw=true" height="200">
 </p>
 
 - **2-Animation** - Como criar animações de objetos
 <p align="center">
-<img src="./img/Tutorial2.png?raw=true" height="100">
+<img src="./img/Tutorial2.png?raw=true" height="200">
 </p>
 
-- **3-MouseClick**(TODO) - Como receber os dados do mouse na janela
+- **3-MouseClick** - Como receber os dados do mouse na janela
+<p align="center">
+<img src="./img/Tutorial3.png?raw=true" height="200">
+</p>
+
 - **4-MenuWindow**(TODO) - Como criar um menu de seleção
 
 ## Instalação

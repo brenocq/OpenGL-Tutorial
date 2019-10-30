@@ -1,6 +1,9 @@
 #include <GL/glut.h>
 #include <iostream>
 #include <math.h>
+#include <vector>
+// Estaremos utilizando a classe vector neste tutorial
+// Se você não sabe como ela funciona olhe aqui: http://www.cplusplus.com/reference/vector/vector/
 
 using namespace std;
 
@@ -15,28 +18,30 @@ typedef struct _bixinho{
   float r,g,b;
 }Bixinho;
 
-// Cria os bixinhos: (radius) (x,y,theta)       (r,g,b)
-Bixinho wilson =     {0.07,   0,0,0,            0.8,0,0};
-Bixinho robson =     {0.05,   -0.3,-0.3,M_PI,   0,0.8,0};
-Bixinho dikson =     {0.1,    -0.5,0,M_PI/2,    0,0,0.8};
+// Estaremos utilizando um vector de bixinhos
+vector<Bixinho> bixinhos;
 
 //---------- Protótipos de função ----------//
-void draw();// Função para desenhar
-void timer(int);// Função de loop
-void rotateBixinho(Bixinho *bixinho, float angle);// Girar bixinho
-void moveBixinho(Bixinho *bixinho, float distance);// Mover bixinho
-void drawBixinho(Bixinho bixinho);// Desenhar bixinho
+void draw();
+void timer(int);
+void mouse(int button, int state, int x, int y);// Função para receber os cliques do mouse
+void rotateBixinho(Bixinho *bixinho, float angle);
+void moveBixinho(Bixinho *bixinho, float distance);
+void drawBixinho(Bixinho bixinho);
 
 //------------------ Main -----------------//
 int main(int argc, char** argv){
+  srand(42);
+
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_RGB);
   glutInitWindowSize(windowWidth, windowHeight);
   glutInitWindowPosition(0, 0);
-  glutCreateWindow("Tutorial 2 - Animation");
+  glutCreateWindow("Tutorial 3 - Mouse Click");
   glClearColor(1.0, 1.0, 1.0, 1.0);
   glutDisplayFunc(draw);
-  glutTimerFunc(0, timer, 0);// Define qual será a função de loop
+  glutTimerFunc(0, timer, 0);
+  glutMouseFunc(mouse);// É chamada quando ocorre cliques na tela
   glutMainLoop();
 
   return 0;
@@ -46,37 +51,48 @@ int main(int argc, char** argv){
 void draw(){
   glClear(GL_COLOR_BUFFER_BIT);
 
-  drawBixinho(wilson);
-  drawBixinho(robson);
-  drawBixinho(dikson);
+  // Desenha cada bixinho do vetor
+  for(int i=0;i<int(bixinhos.size());i++){
+    drawBixinho(bixinhos[i]);
+  }
 
   glutSwapBuffers();
 }
 
 //------------------ Timer -----------------//
 void timer(int){
-  // Essa função é chamada em loop, é aqui que realizaremos as animações
+  // Move cada bixinho do vetor
+  for(int i=0;i<int(bixinhos.size());i++){
+    moveBixinho(&bixinhos[i], 0.005);
+    rotateBixinho(&bixinhos[i], 0.02);
+  }
 
-  // Tenta ficar mudando os parâmetros para ver o que muda! :)
 
-  // Para mover os bixinhos
-  moveBixinho(&wilson, 0.005);
-  moveBixinho(&robson, -0.003);
-  moveBixinho(&dikson, 0.007);
-
-  // Para girar os bixinhos
-  rotateBixinho(&wilson, 0.02);
-  rotateBixinho(&robson, 0.04);
-  rotateBixinho(&dikson, -0.02);
-
-  // Executa a função draw para desenhar novamente
   glutPostRedisplay();
-
-  // O primeiro parâmetro define de quanto em quanto tempo em milissegundos timer será chaamdo
-  // Eu coloquei 1000/60 para definir que vai atualizar a 60hz
-  glutTimerFunc(1000/60, timer, 0);// Garante que esta função será chamada de novo
+  glutTimerFunc(1000/60, timer, 0);
 }
 
+//------------------ Mouse -----------------//
+void mouse(int button, int state, int x, int y)
+{
+  if(button==GLUT_LEFT_BUTTON && state==GLUT_DOWN)
+  {
+    float mouseX, mouseY;
+    // Converte a entrada para pontos (x,y) na tela
+    mouseX = 2*((float(x)/windowWidth)-0.5);
+    mouseY = -2*((float(y)/windowHeight)-0.5);
+
+    float radius = 0.05 + (rand()%50)/1000.0f;
+    float theta = (rand()%628)/100.0f;
+    float r = (rand()%100)/100.0f;
+    float g = (rand()%100)/100.0f;
+    float b = (rand()%100)/100.0f;
+
+    Bixinho newBixinho = {radius, mouseX, mouseY, theta, r, g, b};
+
+    bixinhos.push_back(newBixinho);
+  }
+}
 
 //----------------------------------------------//
 //----------- Funções para o bixinho -----------//
