@@ -1,4 +1,8 @@
-#include <GL/glut.h>
+#ifdef __APPLE__
+    #include <GLUT/glut.h>
+#else
+    #include <GL/glut.h>
+#endif
 #include <iostream>
 #include <math.h>
 // Está cansado de ter que ficar digitando no terminal e ficar dando enter? Então esse tutorial é para você!!
