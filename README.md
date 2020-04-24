@@ -7,6 +7,8 @@ _Obs: Este tutorial é direto e não se aprofunda em conceitos do OpenGL._
 
 Estou criando esses tutoriais para repassar da forma mais simples possível o que eu aprendi sobre o OpenGL. Se você tiver alguma ideia para melhorar esse tutorial, por favor cria um novo issue com sua a ideia nesse repositório pra gente ajudar os próximos que utilizarem. Obrigado! :D
 
+Minicurso 22/04/2020: https://youtu.be/grzhVlLKsto
+
 ## Tutoriais
 - **1-PrintBasicShapes** - Como desenhar triângulos, retângulos e círculos
 <p align="center">
@@ -23,7 +25,7 @@ Estou criando esses tutoriais para repassar da forma mais simples possível o qu
 <img src="./img/Tutorial3.png?raw=true" height="250">
 </p>
 
-- **4-MenuWindow**(TODO) - Como criar um menu de seleção
+- **4-MenuWindow** - Como criar um menu de seleção
 <p align="center">
 <img src="./img/Tutorial4.png?raw=true" height="250">
 </p>
